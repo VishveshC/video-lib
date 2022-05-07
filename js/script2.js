@@ -71,5 +71,4 @@ function clicked(element){
    loadMusic(musicIndex);
    playMusic();
    playingNow();
-   localStorage.setItem("main-index", musicIndex);
 }
