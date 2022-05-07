@@ -5,12 +5,14 @@ const playlist = document.getElementById('playlist');
 const AllLessons = document.querySelector('.AllLessons');
 const videoTitle = document.querySelector('.title');
 
-
+window.onload = function() {
+    var show = localStorage.getItem('liindex');
+}
 const ulTag = document.querySelector("ul");
 AllLessons.innerHTML = `${allVideos.length} Lessons`
 
 
-let musicIndex = 1;
+let musicIndex = show;
 window.addEventListener('load',()=>{
    loadMusic(musicIndex);
    playingNow();
