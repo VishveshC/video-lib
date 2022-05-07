@@ -19,7 +19,7 @@ function playMusic(){
    playlist.classList.add('active')
 }
 function loadMusic(indexNumb){
-   mainVideo.src = `${allVideos[indexNumb - 1].src}.mp4`;
+   mainVideo.src = `${allVideos[indexNumb + 1].src}.mp4`;
    videoTitle.innerHTML = `${indexNumb}. ${allVideos[indexNumb - 1].name}`
    
 }
@@ -63,8 +63,6 @@ function playingNow(){
       // adding onclick attribute in all li tags
       allLiTags[j].setAttribute("onclick", "clicked(this)")
    }
-}
-
 function clicked(element){
    // getting li index of particular clicked li tag
    let getIndex = element.getAttribute("li-index");
