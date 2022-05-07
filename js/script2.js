@@ -5,10 +5,10 @@ const playlist = document.getElementById('playlist');
 const AllLessons = document.querySelector('.AllLessons');
 const videoTitle = document.querySelector('.title');
 
+
 const ulTag = document.querySelector("ul");
 AllLessons.innerHTML = `${allVideos.length} Lessons`
 
-const mainv = localStorage.getItem("main-index");
 
 let musicIndex = 1;
 window.addEventListener('load',()=>{
@@ -20,7 +20,7 @@ function playMusic(){
    playlist.classList.add('active')
 }
 function loadMusic(indexNumb){
-   mainVideo.src = `${allVideos[indexNumb - mainv].src}.mp4`;
+   mainVideo.src = `${allVideos[indexNumb - 1].src}.mp4`;
    videoTitle.innerHTML = `${indexNumb}. ${allVideos[indexNumb - 1].name}`
    
 }
@@ -59,11 +59,12 @@ function playingNow(){
       }
       if(allLiTags[j].getAttribute('li-index')==musicIndex){
          allLiTags[j].classList.add('playing')
-         }
       }
       // adding onclick attribute in all li tags
       allLiTags[j].setAttribute("onclick", "clicked(this)")
    }
+}
+
 function clicked(element){
    // getting li index of particular clicked li tag
    let getIndex = element.getAttribute("li-index");
@@ -72,3 +73,5 @@ function clicked(element){
    playMusic();
    playingNow();
 }
+//localStorage.setItem("main-index", musicIndex);
+//const mainv = localStorage.getItem("main-index");
