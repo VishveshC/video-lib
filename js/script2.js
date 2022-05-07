@@ -69,7 +69,7 @@ function clicked(element){
    let getIndex = element.getAttribute("li-index");
    musicIndex = getIndex;
    loadMusic(musicIndex);
-   localStorage.setItem("main-index", musicIndex);
    playMusic();
    playingNow();
+   localStorage.setItem("main-index", musicIndex);
 }
