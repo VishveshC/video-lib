@@ -5,14 +5,11 @@ const playlist = document.getElementById('playlist');
 const AllLessons = document.querySelector('.AllLessons');
 const videoTitle = document.querySelector('.title');
 
-window.onload = function() {
-    var show = localStorage.getItem('liindex');
-}
 const ulTag = document.querySelector("ul");
 AllLessons.innerHTML = `${allVideos.length} Lessons`
 
 
-let musicIndex = show;
+let musicIndex = 2;
 window.addEventListener('load',()=>{
    loadMusic(musicIndex);
    playingNow();
@@ -61,10 +58,6 @@ function playingNow(){
       }
       if(allLiTags[j].getAttribute('li-index')==musicIndex){
          allLiTags[j].classList.add('playing')
-         function showTable() {
-            var cs = document.getElementById('main-Video');
-            localStorage.setItem('liindex', musicIndex); //store state in localStorage
-            alert("var=" + cs);
          }
       }
       // adding onclick attribute in all li tags
