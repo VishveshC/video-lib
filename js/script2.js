@@ -8,8 +8,9 @@ const videoTitle = document.querySelector('.title');
 const ulTag = document.querySelector("ul");
 AllLessons.innerHTML = `${allVideos.length} Lessons`
 
+const mainv = localStorage.getItem("main-index");
 
-let musicIndex = 2;
+let musicIndex = 1;
 window.addEventListener('load',()=>{
    loadMusic(musicIndex);
    playingNow();
@@ -19,7 +20,7 @@ function playMusic(){
    playlist.classList.add('active')
 }
 function loadMusic(indexNumb){
-   mainVideo.src = `${allVideos[indexNumb + 1].src}.mp4`;
+   mainVideo.src = `${allVideos[indexNumb - mainv].src}.mp4`;
    videoTitle.innerHTML = `${indexNumb}. ${allVideos[indexNumb - 1].name}`
    
 }
@@ -68,6 +69,7 @@ function clicked(element){
    let getIndex = element.getAttribute("li-index");
    musicIndex = getIndex;
    loadMusic(musicIndex);
+   localStorage.setItem("main-index", musicIndex);
    playMusic();
    playingNow();
 }
