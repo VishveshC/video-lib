@@ -59,6 +59,10 @@ function playingNow(){
       }
       if(allLiTags[j].getAttribute('li-index')==musicIndex){
          allLiTags[j].classList.add('playing')
+         function showTable() {
+            document.getElementById('tableDiv').style.display = "block";
+            localStorage.setItem('liindex', li-indexNumb); //store state in localStorage
+         }
       }
       // adding onclick attribute in all li tags
       allLiTags[j].setAttribute("onclick", "clicked(this)")
