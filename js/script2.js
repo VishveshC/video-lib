@@ -60,8 +60,9 @@ function playingNow(){
       if(allLiTags[j].getAttribute('li-index')==musicIndex){
          allLiTags[j].classList.add('playing')
          function showTable() {
-            document.getElementById('tableDiv').style.display = "block";
-            localStorage.setItem('liindex', li-indexNumb); //store state in localStorage
+            var cs = document.getElementById('main-Video');
+            localStorage.setItem('liindex', musicIndex); //store state in localStorage
+            alert("var=" + cs);
          }
       }
       // adding onclick attribute in all li tags
